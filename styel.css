@@ -333,13 +333,24 @@ section { padding: 6rem 4rem; }
 }
 .history-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1200px; margin: 0 auto; align-items: start; z-index: 2; position: relative; }
 .history-body { font-size: .93rem; line-height: 1.9; color: rgba(237, 224, 204, .78); }
-.history-body p { margin-bottom: 1.1rem; }
+
+/* Tambahkan text-align: justify di sini */
+.history-body p { 
+    margin-bottom: 1.1rem; 
+    text-align: justify; 
+}
+
 .timeline { display: flex; flex-direction: column; gap: 1.8rem; padding-left: 1.8rem; position: relative; }
 .timeline::before {
     content: '';
     position: absolute;
     left: 0; top: 6px; bottom: 6px; width: 2px;
     background: linear-gradient(to bottom, var(--gold), rgba(201, 168, 76, .1));
+}
+
+/* Tambahkan baris baru ini untuk paragraf di dalam timeline */
+.timeline p {
+    text-align: justify;
 }
 
 /* BEST SELLER */
