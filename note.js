@@ -121,3 +121,31 @@ if (hamburger && navLinks) {
     });
   });
 }
+
+// VALIDASI DAN KIRIM KONTAK (DENGAN VALIDASI EMAIL)
+function sendContact() {
+  const nama = document.getElementById('cfNama').value.trim();
+  const email = document.getElementById('cfEmail').value.trim();
+  const pesan = document.getElementById('cfPesan').value.trim();
+
+  // 1. Memeriksa apakah ada kolom yang kosong
+  if (!nama || !email || !pesan) {
+    alert('Harap isi semua kolom terlebih dahulu sebelum mengirim pesan! ☕');
+    return;
+  }
+
+  // 2. Memeriksa apakah format input adalah email yang valid
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Format email tidak valid! Harap masukkan alamat email yang benar (contoh: nama@email.com). ✉️');
+    return; // Menghentikan proses jika format email salah
+  }
+
+  // Jika semua kolom terisi dan email sudah benar
+  alert('Pesan terkirim! ☕ Kami akan segera membalas.');
+
+  // Mengosongkan kembali form setelah berhasil dikirim
+  document.getElementById('cfNama').value = '';
+  document.getElementById('cfEmail').value = '';
+  document.getElementById('cfPesan').value = '';
+}
